@@ -79,16 +79,31 @@
     font-weight: 900;
     font-style: italic;
     }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            translate: 0 10px;
+        }
+        to {
+            opacity: 1;
+            translate: 0 0;
+        }
+    }
+    .fade {
+        opacity: 0;
+        animation: fadeIn forwards 300ms;
+        animation-delay: calc(var(--order, 1) * 50ms);
+    }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body
     class="flex flex-col items-center pt-[17dvh] gap-[5dvh] min-h-screen bg-[#131313] text-white roboto-regular"
   >
-      <img src="logo.svg" width="400" />
-      <div>
-      <h1 class="text-8xl font-bold roboto-black">StreMov</h1>
-      <h2 class="text-2xl font-thin roboto-thin">Eradicate Labels, Elevate Humanity</h2>
+      <img src="logo.svg" width="400" style="--order: 5" class="fade"/>
+      <div class="text-center">
+        <h1 class="text-8xl font-bold roboto-black fade" style="--order: 7.5;">StreMov</h1>
+        <h2 class="text-2xl font-thin roboto-thin text-gray-400 fade" style="--order: 10">Eradicate Labels, Elevate Humanity</h2>
       </div>
     </div>
   </body>
